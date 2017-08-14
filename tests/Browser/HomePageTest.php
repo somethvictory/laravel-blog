@@ -13,11 +13,42 @@ class HomePageTest extends DuskTestCase
      *
      * @return void
      */
-    public function testVisitRootPath()
+    public function testWelcomeDashboard()
     {
       $this->browse(function (Browser $browser) {
         $browser->visit('/')
           ->assertSee('Welcome to my blog!!!');
+      });
+    }
+
+    public function testAbout()
+    {
+      $this->browse(function (Browser $browser) {
+        $browser->visit('/')
+          ->assertSee('About');
+      });
+    }
+
+    public function testArchives()
+    {
+      $this->browse(function (Browser $browser) {
+        $browser->visit('/')
+          ->assertSee('Archives');
+      });
+    }
+
+    public function testElsewhere()
+    {
+      $this->browse(function (Browser $browser) {
+        $browser->visit('/')
+          ->assertSee('Elsewhere');
+      });
+    }
+
+    public function testFooter()
+    {
+      $this->browse(function (Browser $browser) {
+        $browser->assertVisible('footer.blog-footer');
       });
     }
 }
