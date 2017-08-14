@@ -1,5 +1,5 @@
 <div class="blog-post">
-  <h2 class="blog-post-title">{{$post->title}}</h2>
+  <a href={{url("/posts/$post->id")}}><h2 class="blog-post-title">{{$post->title}}</h2></a>
   <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}}</p>
 
   <p>{{$post->body}}</p>
