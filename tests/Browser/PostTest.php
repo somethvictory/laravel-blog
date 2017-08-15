@@ -14,14 +14,7 @@ class PostTest extends DuskTestCase
      *
      * @return void
      */
-    use DatabaseTransactions;
-    public function testPostsPath()
-    {
-      $this->browse(function (Browser $browser) {
-        $browser->visit('/posts')
-          ->assertSee('My First Post');
-      });
-    }
+    use DatabaseMigrations;
 
     public function testVisitNewPostPage()
     {
@@ -40,6 +33,14 @@ class PostTest extends DuskTestCase
           ->type('title', 'A New Post')
           ->type('body', 'Some Text')
           ->click('button')
+          ->assertSee('A New Post');
+      });
+    }
+
+    public function testPostDetail()
+    {
+      $this->browse(function (Browser $browser) {
+        $browser->visit('/posts')
           ->assertSee('A New Post');
       });
     }
