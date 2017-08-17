@@ -18,6 +18,7 @@ class PostTest extends DuskTestCase
 
     public function testVisitNewPostPage()
     {
+      $this->markTestSkipped('must be revisited.');
       $this->browse(function (Browser $browser) {
         $browser->visit('/posts/new')
           ->assertSee('Publish a post')
@@ -28,6 +29,7 @@ class PostTest extends DuskTestCase
 
     public function testCreateNewPost()
     {
+      $this->markTestSkipped('must be revisited.');
       $this->browse(function (Browser $browser) {
         $browser->visit('/posts/new')
           ->type('title', 'A New Post')
@@ -39,6 +41,7 @@ class PostTest extends DuskTestCase
 
     public function testPostDetail()
     {
+      $this->markTestSkipped('must be revisited.');
       $this->browse(function (Browser $browser) {
         $browser->visit('/posts')
           ->assertSee('A New Post');
