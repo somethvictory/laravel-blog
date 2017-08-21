@@ -14,11 +14,14 @@ class SabayHomePageTest extends DuskTestCase
     *
     * @return void
     */
-  public function testVisitHomePage()
+  public function testRequiredElements()
   {
     $this->browse(function (Browser $browser) {
-      $browser->visit('http://news.sabay.com.kh/topics/entertainment')
-        ->assertVisible('div.container');
+      $browser->visit('http://news.sabay.com.kh')
+        ->assertVisible('li#entertainment')
+        ->assertVisible('li#technology')
+        ->assertVisible('li#life')
+        ->assertVisible('li#sport');
     });
   }
 }
