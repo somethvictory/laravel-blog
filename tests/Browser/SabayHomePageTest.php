@@ -9,11 +9,10 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class SabayHomePageTest extends DuskTestCase
 {
-  /**
-    * A basic browser test example.
-    *
-    * @return void
-    */
+  //*
+    //A basic browser test example.
+
+    //@return void
   public function testRequiredElements()
   {
     $this->browse(function (Browser $browser) {
@@ -23,5 +22,6 @@ class SabayHomePageTest extends DuskTestCase
         ->assertVisible('li#life')
         ->assertVisible('li#sport');
     });
+    
   }
 }
